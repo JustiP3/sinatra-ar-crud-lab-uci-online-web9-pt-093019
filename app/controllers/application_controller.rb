@@ -38,6 +38,7 @@ class ApplicationController < Sinatra::Base
   post '/articles/:id' do
     @article = Article.find(params[:id])
     @article.content = params[:content]
+    redirect "/articles/#{Article.last.id}"
   end
 
   get '/articles/:id' do
