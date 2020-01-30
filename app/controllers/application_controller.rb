@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
     @article.title = title
     @article.content = content
     @article.save
-    erb :show
+    redirect '/articles/#{Article.last.id}'
   end
 
   get '/articles/:id' do
