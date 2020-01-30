@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
 
   post '/articles/:id/delete' do
     @article = Article.find(params[:id])
-    @article.delete
+    Article.delete(params[:id])
     redirect '/articles'
   end
 
